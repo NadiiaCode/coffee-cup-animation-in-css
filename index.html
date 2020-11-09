@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee cup animation</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="cup">
+        <div class="emoji">😀</div>
+      </div>
+    </div>
+
+    <style>
+      body {
+        background: black;
+      }
+
+      .main {
+        top: -50%;
+        left: 50%;
+        width: 100%;
+        position: absolute;
+        display: grid;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        animation: new 2s forwards;
+      }
+
+      @keyframes new {
+        to {
+          top: 50%;
+        }
+      }
+
+      .cup {
+        width: 250px;
+        height: 320px;
+        position: relative;
+        background-color: #fb00d9;
+        border: 3px solid #00fb36;
+        border-radius: 10px 10px 40px 40px;
+      }
+
+      .cup::before {
+        width: 45px;
+        height: 80px;
+        top: 80px;
+        left: 250px;
+        position: absolute;
+        content: "";
+        background-color: transparent;
+        border-radius: 0 65% 65% 0;
+        border: 30px solid #00fb36;
+      }
+
+      .cup .emoji {
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        border-radius: 50%;
+        background: #00fb36;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 85px;
+        transform: translate(-50%, -50%);
+        animation: smile 2s infinite alternate;
+      }
+
+      @keyframes smile {
+        to {
+          font-size: 100px;
+        }
+      }
+    </style>
+  </body>
+</html>
